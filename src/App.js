@@ -28,8 +28,10 @@ function App() {
   }
   return (
     <div className="App">
-      <button onClick={handleSignOut}>Sign Out</button>
-      <button onClick={handleGoogleAuth}>Google Sign in</button>
+      {users.email ?
+        <button onClick={handleSignOut}>Sign Out</button> :
+        <button onClick={handleGoogleAuth}>Google Sign in</button>
+      }
       <h2>Name: {users.displayName}</h2>
       <h3>Email: {users.email}</h3>
       <img src={users.photoURL} alt="" />
